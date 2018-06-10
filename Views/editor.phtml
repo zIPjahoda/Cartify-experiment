@@ -1,0 +1,57 @@
+<div class="row">
+    <h1>Editor článků</h1>
+
+
+    <form method="post" enctype="multipart/form-data">
+        <div style="color: #fff; padding-left: 10px">
+            <input type="hidden" name="id"/>
+            <h2>title head max 150 pismen to co se zobrazi googlu odkaz</h2><br/>
+            <a>Titulek/title</a> <input type="text" name="title"/><br/>
+            <a>URL adresa</a> <input type="text" name="url"/><br/>
+            <h2>Popisek co se zobrazi google hned pod tím odkazem takže použít časo hw nároky</h2><br/>
+            <a>Popisek/description </a> <input type="text" name="description"/><br/>
+            <br/>
+            <a>fotka hry</a> <input type="file" name="image" id="image"><br/>
+            <a>fotky z hry</a> <input type="file" name="gallery[]" id="image" multiple><br/>
+            <a>nazev fotky hry title</a> <input type="text" name="imageTitle"><br/>
+            <a>nazev fotky hry alt</a> <input type="text" name="imageAlt"><br/>
+            <a>nazev hry</a> <input type="text" name="nameGame"/><br/> <br/>
+            <a>Odkaz na video oddelit ; </a> <input type="text" name="videos"/><br/> <br/>
+            <a>min Processor intel</a> <input type="text" name="minProcessorIntel"/><br/>
+            <a>min Processor AMD</a> <input type="text" name="minProcessorAMD"/><br/>
+            <a>max Processor intel</a> <input type="text" name="maxProcessorIntel"/> <br/>
+            <a>max Processor AMD</a> <input type="text" name="maxProcessorAMD"/> <br/>
+            <br/>
+            <a>minGraphicsInvidia </a> <input type="text" name="minGraphicsInvidia"/><br/>
+            <a>minGraphicsAMD</a> <input type="text" name="minGraphicsAMD"/><br/>
+            <a>maxGraphicsInvidia</a> <input type="text" name="maxGraphicsInvidia"/><br/>
+            <a>maxGraphicsAMD</a> <input type="text" name="maxGraphicsAMD"/><br/>
+
+            <br/>
+            <a>min RAM</a> <input type="number" name="minRAM"/><br/>
+            <a>max RAM </a> <input type="number" name="maxRAM"/> <br/>
+            <a>operating system </a> <input type="text" name="operatingSystem"/><br/>
+            <a>directX, mantle, Vulka</a> <input type="text" name="renderDirectX"/><br/>
+            <a>HDD </a><input type="number" name="HDD"> <br/>
+            <textarea name="contents"></textarea>
+            <input type="submit" value="Uložit článek"/>
+        </div>
+    </form>
+
+
+    <script type="text/javascript" src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea[name=contents]",
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            entities: "160,nbsp",
+            entity_encoding: "named",
+            entity_encoding: "raw"
+        });
+    </script>
+</div>

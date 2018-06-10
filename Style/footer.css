@@ -1,0 +1,13 @@
+footer {
+  position: relative;
+  padding-bottom: 0;
+  border-top: 2px solid #FF9800;
+  background-color: #1E1E1E;
+  text-decoration: none; }
+  footer p {
+    text-decoration: none;
+    padding-bottom: 10px; }
+  footer a {
+    text-decoration: none; }
+
+/*# sourceMappingURL=Footer.css.map */

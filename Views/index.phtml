@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="h1MainStyle"><h1>Hry</h1></div>
+    <div class="wrapper">
+        <div class="masonry">
+            <?php foreach ($articles as $article) : ?>
+                <div class="item">
+                    <div class="image">
+                        <a href="hwpozadavky/<?= $article['url'] ?>"><img
+                                src="Photos/NoCompile/<?= $article['image'] ?>"
+                                alt="<?= $article['imageAlt'] ?>"
+                                title="<?= $article['imageTitle'] ?>">
+                            <h2><span><?= $article["nameGame"] ?></span></h2>
+                        </a>
+                    </div>
+                    <?php if ($levelAdmin == 4) : ?>
+                        <br/>
+                        <a href="editor/<?= $article['url'] ?>">Edit</a>
+                        <a href="tutorials/<?= $article['url'] ?>/delete">delete</a>
+                    <?php endif ?>
+                </div>
+            <?php endforeach; ?>
+
+        </div>
+    </div>
+    <br clear="both"/>
+    <div class="center">
+        <div class="pagination">
+            <ul>
+                <?php foreach ($numbers as $number) : ?>
+                    <li><a href="hwpozadavky/stranka/<?= $number ?>"> <?= $number ?> </a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br clear="both"/>

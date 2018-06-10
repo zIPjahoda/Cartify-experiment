@@ -1,0 +1,7 @@
+<?php foreach ($gallery as $gall) : ?>
+    <a href="Photos/Gallery/<?= $gall['url_picture'] ?>" data-lightbox="gameGallery"
+       data-title="Obrazek" style="float: left"><img
+            src="Photos/GalleryMini/<?= $gall['url_picture'] ?>"
+            class="galleryImg">
+    </a>
+<?php endforeach ?>

@@ -1,0 +1,14 @@
+<div class="row" style="padding-left: 5px;">
+    <h1>Kontaktujte nás... na cokoliv</h1
+
+    <form method="post" id="form-email">
+        <a>Napište svůj email</a>
+        <input type="email" name="email" required="required" value="<?php if (isset($_POST['email'])) echo(htmlspecialchars($_POST['email'])); ?>"/><br/>
+        <a>Antispam - Napište aktualní rok </a>
+        <input type="text" name="years" required="required"/><br/>
+        <a>Vaše zpráva: </a><br/>
+        <textarea
+            name="message"><?php if (isset($_POST['message'])) echo(htmlspecialchars($_POST['message'])) ?></textarea><br/>
+        <input type="submit" value="odeslat"/>
+    </form>
+</div>

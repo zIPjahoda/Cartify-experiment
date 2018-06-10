@@ -1,0 +1,95 @@
+<div class="row content-sidebar">
+    <header class="w3-border-bottom w3-border-red" xmlns="http://www.w3.org/1999/html">
+        <h1><?= $title ?></h1>
+    </header>
+    <section>
+        <div class="bigger">
+            <div class="contents">
+                <?= $_contents ?>
+            </div>
+            <div class="sizeArticleHw">
+                <h2>Minimální hw nároky</h2>
+                <div class="block">
+                    <div class="left"><b>CPU</b></div>
+                    <div class="right">
+                        <div class="left"><a><?= $minProcessorIntel ?></a></div>
+                        <a><?= $minProcessorAMD ?></a></div>
+                </div>
+                <div class="block2">
+                    <div class="left"><b>GPU</b></div>
+                    <div class="right">
+                        <div class="left"><a><?= $minGraphicsInvidia ?></div>
+                        <a><?= $minGraphicsAMD ?></a></div>
+                </div>
+                <div class="block">
+                    <div class="left"><b>RAM paměť</b></div>
+                    <div class="right"><a><?= $minRAM ?> GB</a></div>
+                </div>
+
+                <div class="block2">
+                    <div class="left"><b>OS</b></div>
+                    <div class="right"><a><?= $operatingSystem ?></a></div>
+                </div>
+                <div class="block">
+                    <div class="left"><b>DirectX, technologie</b></div>
+                    <div class="right"><a><?= $renderDirectX ?></a></div>
+                </div>
+                <div class="block2">
+                    <div class="left"><b>HDD</b></div>
+                    <div class="right"><a><?= $HDD ?> GB</a></div>
+                </div>
+
+                <h2>Doporučené hw nároky</h2>
+                <div class="block">
+                    <div class="left"><b>CPU</b></div>
+                    <div class="right">
+                        <div class="left"><a><?= $maxProcessorIntel ?></a></div>
+                        <a><?= $maxProcessorAMD ?></a>
+                    </div>
+                </div>
+                <div class="block2">
+                    <div class="left"><b>GPU</b></div>
+                    <div class="right">
+                        <div class="left"><a><?= $maxGraphicsInvidia ?></a></div>
+                        <a><?= $maxGraphicsAMD ?></a></div>
+                </div>
+                <div class="block">
+                    <div class="left" id="l1"><b>RAM paměť</b></div>
+                    <div class="right" id="r1"><a><?= $maxRAM ?> GB</a></div>
+                </div>
+                <date><?= $date ?></date>
+            </div>
+        </div>
+        <div class="smaller">
+            <img src="Photos/NoCompile/<?= $image ?>" alt="<?= $imageAlt ?>" title="<?= $imageTitle ?>" height="300"
+                 width="250"
+                 class="articleImg">
+        </div>
+    </section>
+
+    <br clear="both"/>
+    <form method="post">
+        <?php if ($levelAdmin == 0): ?>
+            jmeno <input type="text" name="name"/><br/>
+            <textarea type="text" name="comment"></textarea><br/>
+            <div class="g-recaptcha" data-sitekey="6LeoAh4TAAAAAJs-QxzbL3KTCz1SEyR4s39Kul2-"></div>
+            <input type="submit" value="sendComment"/>
+        <?php else : if ($levelAdmin > 0) ?>
+            <form method="post">
+                <textarea type="text" name="comment">enter comments</textarea><br/>
+                <input type="submit" value="sendComment"/>
+            </form>
+        <?php endif ?>
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <?php foreach ($comments as $comment) : ?>
+        <tr>
+            <td>
+                <h2><a><?= $comment['name'] ?></a></h2>
+                <?= $comment['text'] ?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+</div>
+

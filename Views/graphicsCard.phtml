@@ -1,0 +1,13 @@
+
+<a>nazev grafiky <?= $name_graphics_card ?></a>
+<a>obrazek url <?= $image_graphics_card ?></a>
+
+<?php foreach ($games as $game): ?>
+    <p>url<?= $game['url_game']?></p>
+    <p>min fps<?= $game['min_fps']?></p>
+    <p>max fps<?= $game['max_fps']?></p>
+    <p>prumer fps<?= $game['average_fps']?></p>
+    <p>typ procesoru<?= $game['processor']?></p>
+    <p>ram pamet<?= $game['ram']?></p>
+    <p>rozliseni monitoru<?= $game['resolution_monitor']?></p>
+<?php endforeach; ?>

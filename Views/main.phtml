@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+    <base href="http://localhost/"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="L_z_l5kuvWXGkbDctbefHz9T32ThZK5K7d1oR76mJ44"/>
+    <title><?= $title ?></title>
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="Style/css-reset.css" type="text/css"/>
+    <link rel="stylesheet" href="Style/style.css" type="text/css"/>
+    <link rel="stylesheet" href="Style/BarChart.css" type="text/css"/>
+    <link href="Style/css/lightbox.css" rel="stylesheet">
+    <script src="Style/js/jquery-3.0.0.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet'
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta name="description" content="<?= $description ?>"/>
+    <meta property="og:title" content="<?= $title ?>"/>
+    <meta property="og:url" content="<?= $url ?>"/>
+    <meta property="og:title" content="<?= $title ?>"/>
+    <meta property="og:description" content="<?= $description ?>"/>
+    <meta property="og:site_name" content="hwnaroky"/>
+    <meta property="og:image" content="<?= $image ?>"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="<?= $description ?>"/>
+    <meta name="twitter:title" content="<?= $title ?>"/>
+    <meta name="twitter:site" content="@w3bits_"/>
+    <meta name="twitter:domain" content="hwnaroky"/>
+    <meta name="twitter:image:src" content="<?= $image ?>"/>
+    <meta name="twitter:creator" content="@hwNaroky_"/>
+
+
+</head>
+
+<body>
+
+
+<div class="menu-color">
+    <div class="menu-width">
+        <div class="float"><a href="/"><h1 style="color: #ffffff" class="brand-logo">HW nároky</h1></a></div>
+    </div>
+</div>
+
+<div class="menu">
+    <ul>
+            <li><a href="/">Hry</a></li>
+            <li><a href="/grafickakarta">Grafické karty</a></li>
+            <li><a href="/article">Články</a></li>
+    </ul>
+</div>
+<br clear="both"/>
+<?php foreach ($messages as $message) : ?>
+    <p class="message"><?= $message ?></p>
+<?php endforeach ?>
+
+<br clear="both"/>
+
+
+<article>
+    <?php $this->controller->getViews(); ?>
+</article>
+<br clear="both"/>
+<footer>
+    <p>vznik 2016
+        <a href="contact">Contact</a>
+        <a href="http://www.worldcsgo.eu" target="_blank">worldcsgo.eu</a>.</p>
+</footer>
+<script src="Style/js/lightbox.js"></script>
+</body>
+</html>

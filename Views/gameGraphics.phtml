@@ -1,0 +1,22 @@
+<h1>Editor grafickz her pro fps</h1>
+<form method="post">
+    <select name="url">
+        <?php foreach ($urls as $url) : ?>
+            <option  value="<?=$url['url']?>"><?=$url['imageTitle']?></option>
+        <?php endforeach; ?>
+    </select><br/>
+
+    <select name="graphicsCard">
+        <?php foreach($graphicsCards as $graphicsCard) :?>
+            <option value="<?=$graphicsCard['url']?>"><?=$graphicsCard['name_graphics_card']?></option>
+        <?php endforeach;?>
+    </select><br/>
+    <a>minimum fps</a>          <input type="text"  name="min_fps"/>    <br/>
+    <a>midle fps</a>            <input type="text"  name="mid_fps"/>    <br/>
+    <a>max fps</a>              <input type="text"  name="max_fps"/>    <br/>
+    <a>average fps</a>          <input type="text"  name="average_fps"/><br/>
+    <a>typ procesoru</a>        <input type="text"  name="processor"/>  <br/>
+    <a>ram pameti</a>           <input type="text"  name="ram"/>        <br/>
+    <a>rozliseni monitoru</a>   <input type="text"  name="resolution_monitor"/> <br/>
+    <input type="submit" value="Uložit"/>
+</form>

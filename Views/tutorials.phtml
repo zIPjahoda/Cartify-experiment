@@ -1,0 +1,22 @@
+<h1>articles</h1>
+<table>
+    <?php foreach ($articles as $article) : ?>
+        <tr>
+            <td>
+                <h2><a href="tutorials/<?= $article['url'] ?>"><?= $article['title'] ?></a></h2>
+                <?= $article['description'] ?>
+                <?php if($levelAdmin == 4) : ?>
+                    <br />
+                    <a href="editor/<?= $article['url'] ?>">Edit</a>
+                    <a href="tutorials/<?= $article['url'] ?>/delete">delete</a>
+                <?php endif ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+
+        <ul class="pagination">
+    <?php foreach($numbers as $number) : ?>
+            <li class="waves-effect"><a href="tutorials/page/<?=$number?>"> <?=$number?> </a></li>
+    <?php endforeach; ?>
+        </ul>

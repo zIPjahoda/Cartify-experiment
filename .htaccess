@@ -1,0 +1,12 @@
+Options -Indexes
+
+RewriteEngine On
+# RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(Views/\.php) - [F,L,NC]
+RewriteRule ^(Controllers/\.php) - [F,L,NC]
+RewriteRule ^(Models/\.php) - [F,L,NC]
+RewriteRule ^(Config/\.config) - [F,L,NC]
+RewriteRule !\.(css|js|icon|zip|rar|png|jpg|gif|pdf)$ index.php [L]

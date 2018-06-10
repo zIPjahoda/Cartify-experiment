@@ -1,0 +1,57 @@
+Models
+-------------------------------------
+
+Views
+-------------------------------------
+
+Controllers
+-------------------------------------
+
+
+
+GOALS:
+
+-Maintain a scalable architecture
+-Form framework
+-Database interface using PDO
+-User permission levels (0 - guest, 1 - logged in, 2 - moderator, 3 - admin)
+-Easy to use administration for managing database
+-Debugging features (ex. DB dumps)
+-Router with exception support
+
+DATABASES:
+users {
+    id: A_I, PRIMARY_KEY, INT
+    username: VARCHAR 50
+    email: VARCHAR 150
+    password: VARCHAR 260
+    permission_level: INT
+}
+
+-description bude na hlavni strance pri vypisu vsech stranek jako takovy mensi podnadpis
+articles{
+    id: A_I, PRIMARY_KEY, INT
+    title: VARCHAR 100, utf8_czech_ci
+    contents : text, utf8_czech_ci
+    image_url: VARCHAR 150
+    description: text, utf8_czech_ci
+    time: DATETIME, CURRENT_TIME
+    user_id: INT (ID admina, který napsal článek) FOREIGN KEY users.id
+}
+
+
+users {
+    id: A_I, PRIMARY_KEY, INT
+    username: VARCHAR 50
+    email: VARCHAR 150
+    password: VARCHAR 260
+    permission_level: INT
+    finished_courses: VARCHAR(2000) (dokončené kurzy (tutoriály))
+}
+
+comments{
+    id: INT
+    id_comments: INT
+    username: VARCHAR 50
+    contents: text, utf8_czech_ci
+}
